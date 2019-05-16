@@ -1,0 +1,357 @@
+{
+  "code": 200,
+  "data": {
+    "edgePro": [
+      {
+        "dicCode": "comm",
+        "dicName": "通联关系",
+        "keyGroup": "edgePro",
+        "parentId": "012",
+        "val1": "comm"
+      }
+    ],
+    "flagLabel": [
+      {
+        "dicCode": "00022",
+        "dicName": "人口流动状态",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00023",
+        "dicName": "是否涉农",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00025",
+        "dicName": "是否游客",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00026",
+        "dicName": "外地学生",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00027",
+        "dicName": "骚扰电话",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00028",
+        "dicName": "群发短信",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00029",
+        "dicName": "疑似服务电话",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00033",
+        "dicName": "夜间活跃",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00032",
+        "dicName": "昼伏夜出",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00030",
+        "dicName": "山寨机",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00011",
+        "dicName": "一机多卡",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00010",
+        "dicName": "是否换手机",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00009",
+        "dicName": "是否换卡",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00014",
+        "dicName": "是否与边境通联",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00020",
+        "dicName": "是否发过英代维",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00012",
+        "dicName": "是否使用vpn",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00013",
+        "dicName": "是否使用小众软件",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00019",
+        "dicName": "是否维族人",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00018",
+        "dicName": "语义渉恐",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00017",
+        "dicName": "宗教场所停留",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00016",
+        "dicName": "是否去边境",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00015",
+        "dicName": "重点国家通联",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00031",
+        "dicName": "新疆人",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      },
+      {
+        "dicCode": "00021",
+        "dicName": "是否在控",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1"
+      }
+    ],
+    "properLabel": [
+      {
+        "dicCode": "00024",
+        "dicName": "消费能力",
+        "keyGroup": "properLabel",
+        "parentId": "021",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00034",
+        "dicName": "归属地",
+        "keyGroup": "properLabel",
+        "parentId": "021",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00000",
+        "dicName": "服务号码",
+        "keyGroup": "properLabel",
+        "parentId": "021",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00006",
+        "dicName": "来源地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00005",
+        "dicName": "社会属性",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00004",
+        "dicName": "备注姓名",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00003",
+        "dicName": "性别",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00002",
+        "dicName": "年龄",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00001",
+        "dicName": "机主姓名",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00007",
+        "dicName": "居住地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      },
+      {
+        "dicCode": "00008",
+        "dicName": "工作地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0"
+      }
+    ],
+    "labelType": [
+      {
+        "dicCode": "021",
+        "dicName": "基本属性",
+        "keyGroup": "labelType",
+        "parentId": "02"
+      },
+      {
+        "dicCode": "023",
+        "dicName": "涉恐涉暴",
+        "keyGroup": "labelType",
+        "parentId": "02"
+      },
+      {
+        "dicCode": "024",
+        "dicName": "手动标记",
+        "keyGroup": "labelType",
+        "parentId": "02"
+      },
+      {
+        "dicCode": "022",
+        "dicName": "公共管理",
+        "keyGroup": "labelType",
+        "parentId": "02"
+      }
+    ],
+    "nodePro": [
+      {
+        "dicCode": "idCard",
+        "dicName": "身份证",
+        "keyGroup": "nodePro",
+        "parentId": "011",
+        "val1": "/(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)/"
+      },
+      {
+        "dicCode": "bus",
+        "dicName": "车牌号",
+        "keyGroup": "nodePro",
+        "parentId": "011",
+        "val1": "/^(([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-Z](([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳使领]))$/"
+      },
+      {
+        "dicCode": "user",
+        "dicName": "手机号码",
+        "keyGroup": "nodePro",
+        "parentId": "011",
+        "val1": "/^(\\d{7,13}\\s*){1}(\\n(\\d{7,13}\\s*))*$/"
+      }
+    ],
+    "manyPro": [
+      {
+        "dicCode": "202",
+        "dicName": "社区发现",
+        "keyGroup": "manyPro",
+        "parentId": "052"
+      },
+      {
+        "dicCode": "205",
+        "dicName": "关系呈现",
+        "keyGroup": "manyPro",
+        "parentId": "052"
+      },
+      {
+        "dicCode": "206",
+        "dicName": "人员关系",
+        "keyGroup": "manyPro",
+        "parentId": "052"
+      }
+    ],
+    "freeLabel": [
+      {
+        "dicCode": "00035",
+        "dicName": "当前用户",
+        "keyGroup": "freeLabel",
+        "parentId": "024",
+        "val1": "2"
+      },
+      {
+        "dicCode": "00037",
+        "dicName": "所有用户",
+        "keyGroup": "freeLabel",
+        "parentId": "024",
+        "val1": "2"
+      }
+    ],
+    "singlePro": [
+      {
+        "dicCode": "201",
+        "dicName": "单人分析",
+        "keyGroup": "singlePro",
+        "parentId": "051"
+      }
+    ]
+  },
+  "msg": "success"
+}

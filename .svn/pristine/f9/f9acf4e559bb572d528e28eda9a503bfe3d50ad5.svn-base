@@ -1,0 +1,10 @@
+{
+  "code":200,
+  "data":{
+    "departName":"西安第三大队二支队",
+    "dutyName":"admin",
+    "fullname":"admin",
+    "username":"admin"
+  },
+  "msg":"success"
+}

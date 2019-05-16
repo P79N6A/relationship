@@ -1,0 +1,31 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "labels": [
+        {
+          "labelCode": "0004",
+          "labelName": "涉毒",
+          "userName": "ceshi"
+        },
+        {
+          "labelCode": "0003",
+          "labelName": "涉赌",
+          "userName": "admin"
+        }
+      ],
+      "nodeId": "95075345"
+    },
+    {
+      "labels": [
+        {
+          "labelCode": "0004",
+          "labelName": "涉毒",
+          "userName": "ceshi"
+        }
+      ],
+      "nodeId": "13619157876"
+    }
+  ],
+  "msg": "success"
+}

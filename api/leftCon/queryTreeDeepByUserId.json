@@ -1,0 +1,27 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "deepName": "status",
+      "sortType": "ASC",
+      "treeLevel": 1
+    },
+    {
+      "deepName": "dep",
+      "sortType": "ASC",
+      "treeLevel": 2
+    },
+    {
+      "deepName": "casetype",
+      "sortType": "ASC",
+      "treeLevel": 3
+    },
+    {
+      "deepName": "case",
+      "sortType": "ASC",
+      "treeLevel": 4
+    }
+  ],
+  "msg": "success"
+}
+

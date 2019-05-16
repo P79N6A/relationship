@@ -1,0 +1,55 @@
+{
+  "code": 200,
+  "data": [{
+    "caseId": "4028818e682c028e01682c077c1c0000",
+    "createUser": "超级管理员",
+    "createUserId": "1032",
+    "createtime": 1546936511000,
+    "fullTaskName": "ceshi180912",
+    "selected": false,
+    "showButton": "2",
+    "taskId": "rfs636236df5a3eb503f71cb",
+    "taskName": "ceshi18091",
+    "updatetime": 1577808000000
+  },
+    {
+      "caseId": "4028818e682c028e01682c077c1c0000",
+      "createUser": "超级管理员",
+      "createUserId": "1032",
+      "createtime": 1547521669000,
+      "fullTaskName": "45658",
+      "selected": false,
+      "showButton": "2",
+      "taskId": "rfs109002ac1d5a524247cf8",
+      "taskName": "45658",
+      "updateUser": "超级管理员",
+      "updateUserId": "1032",
+      "updatetime": 1547521692000
+    },
+    {
+      "caseId": "4028818e682c028e01682c077c1c0000",
+      "createUser": "超级管理员",
+      "createUserId": "1032",
+      "createtime": 1547519866000,
+      "fullTaskName": "78",
+      "selected": false,
+      "showButton": "2",
+      "taskId": "rfs0385757882dfc7447488c",
+      "taskName": "78"
+    },
+    {
+      "caseId": "4028818e682c028e01682c077c1c0000",
+      "createUser": "超级管理员",
+      "createUserId": "1032",
+      "createtime": 1547275344000,
+      "fullTaskName": "123",
+      "selected": false,
+      "showButton": "2",
+      "taskId": "rfs443379fc078ea372d5729",
+      "taskName": "123",
+      "updateUser": "超级管理员",
+      "updateUserId": "1032",
+      "updatetime": 1547518035000
+    }],
+  "msg": "success"
+}

@@ -1,0 +1,436 @@
+[
+  {"data":
+  {
+    "id": "test11",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test11",
+    "Degree" : 194,
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": "",
+    "Degree" : 10
+  },
+  {"data":
+  {
+    "id": "test12",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test12",
+    "Degree" : 494,
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test13",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test13",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test14",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test14",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test15",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test15",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test16",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test16",
+    "flag":2
+
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test17",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test17",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test18",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test18",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test19",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test19",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {"data":
+  {
+    "id": "test20",
+    "altered": 0,
+    "rank": 175,
+    "cited": 12,
+    "isseed": false,
+    "uniprot": "Q9NRG4",
+    "isvalid": true,
+    "importance": 3,
+    "label" : "test20",
+    "flag":2
+  },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin11",
+      "source": "test11",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin12",
+      "source": "test12",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin13",
+      "source": "test13",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin14",
+      "source": "test14",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin15",
+      "source": "test15",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin16",
+      "source": "test16",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin17",
+      "source": "test17",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin18",
+      "source": "test18",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin19",
+      "source": "test19",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data":
+    {
+      "id": "lin20",
+      "source": "test20",
+      "cited": 0,
+      "target": "test10",
+      "pubmed": [],
+      "isdirected": true,
+      "type": "controls-state-change-of",
+      "datasource": ["PANTHER"],
+      "flag":2
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "_from": "cytoscape-undo-redo",
+  "_id": "cytoscape-undo-redo@1.3.1",
+  "_inBundle": false,
+  "_integrity": "sha512-wlKbPgVJTLFNLRyMOq6YMVv8etFfe1hjauC+MuBleeArRWq4u47FWJpfWWkkqVkZopn6c9lQ8DJfZ/iZRjWqIg==",
+  "_location": "/cytoscape-undo-redo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cytoscape-undo-redo",
+    "name": "cytoscape-undo-redo",
+    "escapedName": "cytoscape-undo-redo",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://192.168.1.99:4873/cytoscape-undo-redo/-/cytoscape-undo-redo-1.3.1.tgz",
+  "_shasum": "c6612c4313c4c880260bc9f85d240636c782ee75",
+  "_spec": "cytoscape-undo-redo",
+  "_where": "E:\\rfs\\rfs-all\\rfs-ui",
+  "bugs": {
+    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-undo-redo/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Manages undo-redo actions",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.5",
+    "gulp-prompt": "^0.1.1",
+    "gulp-replace": "^0.4.0",
+    "gulp-shell": "^0.2.9",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.2.1"
+  },
+  "homepage": "https://github.com/iVis-at-Bilkent/cytoscape.js-undo-redo",
+  "keywords": [
+    "cytoscape",
+    "cyext"
+  ],
+  "license": "MIT",
+  "main": "cytoscape-undo-redo.js",
+  "name": "cytoscape-undo-redo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iVis-at-Bilkent/cytoscape.js-undo-redo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "spm": {
+    "main": "cytoscape-undo-redo.js"
+  },
+  "version": "1.3.1"
+}

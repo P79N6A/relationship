@@ -1,0 +1,1039 @@
+<template>
+  <div id="statistics">
+    <!--<Icon type="md-code-working" style="font-weight: bolder; font-size: 18px; margin-top: -3px; margin-right: 3px"></Icon>-->
+    <!--<span style="font-weight: bolder">整体信息</span>-->
+    <ul>
+      <li class="statistics-info statistics-li f-cbli">
+        <div class="statistics-container">
+        <span class="statistics-icon f-csp">
+        <Icon :class="menu.isShowGraphicalStatistics?'isUnfold':''" @click="unfold('isShowGraphicalStatistics', 'info')"
+              type="ios-arrow-forward"></Icon>
+        </span>
+          <span class="iconfont icon-tuxing" style="font-size:16px"></span>
+          <span>{{statisticsInfoName}}</span>
+          <span id="question-group" style="margin-left: 200px;font-size:16px;cursor: pointer" >
+          <i class="iconfont icon-mendian-"></i>
+         </span>
+        </div>
+        <div class="menu-main" v-show="menu.isShowGraphicalStatistics">
+          <graphical-statistics ref="graphicalStatistics"></graphical-statistics>
+        </div>
+        <div class="modelinfos">
+          <div class="mainTitle">亲密度</div>
+          <p>亲密度越高，则团体之间联系的联系越紧密</p>
+          <div class="mainTitle">稳固度</div>
+          <p>稳固度越高，则团体之间的关系越稳定</p>
+        </div>
+      </li>
+      <li class="statistics-li f-cbli">
+        <div id="nodeGroup-container" class="statistics-container">
+          <span class="statistics-icon f-csp">
+          <Icon :class="menu.isShowNodeStatistics?'isUnfold':''" @click="unfold('isShowNodeStatistics', 'node')"
+                type="ios-arrow-forward"></Icon>
+          </span>
+          <span class="iconfont icon-duixiang" style="font-size:18px"></span>
+          <span>对象</span>
+          <span class="cls-num" :title="nodesNum">( {{nodesNum}} )</span>
+          <div class="main-clsf"  @click="allCheck">
+          <span  style="display: inline-block" v-if="ischeckCls"><Icon type="md-checkmark" /></span>
+          </div>
+          <span  class="checktitle" style="margin-left: 69px">全选</span>
+          <Input class="statisticsSearch" v-model="nodeSearchContent" @on-keyup="searchNodeStatistics(nodeSearchContent)"
+                 icon="ios-search" size="small" placeholder="搜索对象..."></Input>
+        </div>
+        <div id="nodeGroup-main" class="node-group-main" v-show="menu.isShowNodeStatistics">
+          <!--<statistics-tree ref="statisticsTree" v-if="" :treeData="nodesTreeData" :treeNum="nodesNum " :nodesTreeData="nodesTreeData"-->
+          <!--:selectNode="selectNode"></statistics-tree>-->
+          <!--<div :selectNode="selectNode"></div>-->
+          <ul>
+            <li v-for="(group,index) in nodesTreeData" class="group-li f-csp">
+              <span @mouseenter="addHighlight" @mouseleave="cancelHighlight" style="cursor: pointer;display: inline-block;">
+                <Icon @click="treeGroupUnfold(nodesTreeData, group, 'node')" type="ios-arrow-forward" :class="!!group.show?'isUnfold':''"></Icon>
+                <span @click="treeGroupUnfold(nodesTreeData, group, 'node')" class="f-csp statistics-group-span">{{group.name}}</span>
+                <div class="cls-checklist" @click="checkList(index,group.type)">
+                  <span class="clsIcon"><Icon type="md-checkmark" /></span>
+                </div>
+              </span>
+              <div class="statistics-group-container">
+                <span class="iconfont icon-shejiao" title="社交指数" style="font-size:20px;margin-left: 44px" @click="showSocialExponent(group)"></span>
+
+                <div class="progress-content">
+                  <div class="length-vo" :title="group.children.length">{{group.children.length}}</div>
+                  <div class="ivu-progress ivu-progress-normal">
+                    <div class="ivu-progress-outer">
+                      <div class="ivu-progress-inner" style="background-color: #afabaa73">
+                        <div class="ivu-progress-bg" :style="{width:getPercent(nodesNum, group.children), height:'5px'}"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-show="!!group.show">
+                <ul style="margin-left: 15px">
+                  <li class="node-li f-csp" style="list-style: none;margin: 8px 4px ;padding: 0 8px;white-space: nowrap;outline: 0;"
+                      v-for="node in group.children" :class="node.select" @click="graphNodeSelect(node, $event)" :name="node.id">
+                    <span class="f-csp" @mouseenter="addHighlight" @mouseleave="cancelHighlight">{{node.name}}</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li id="edgeGroup" class="statistics-li f-csp">
+        <div id="edgeGroup-container" class="statistics-container">
+            <span class="statistics-icon f-csp">
+              <Icon :class="menu.isShowEdgeStatistics?'isUnfold':''" @click="unfold('isShowEdgeStatistics', 'edge')"
+                    type="ios-arrow-forward"></Icon>
+            </span>
+          <span class="iconfont icon-guanxi-copy-copy" style="font-size:20px"></span>
+          <span>关系</span>
+          <span class="cls-num" :title="edgesNum"> ( {{edgesNum}} ) </span>
+          <div class="main-clsedge"  @click="alledgesCheck">
+            <span  style="display: inline-block" v-if="isedgecheck"><Icon type="md-checkmark" /></span>
+          </div>
+          <span  class="checktitle" style="margin-left: 69px">全选</span>
+          <Input class="statisticsSearch" v-model="edgeSearchContent" @on-keyup="searchEdgeStatistics(edgeSearchContent)"
+                 icon="ios-search" size="small" placeholder="搜索关系..."></Input>
+        </div>
+        <div id="edgeGroup-main" class="edge-group-main"  v-show="menu.isShowEdgeStatistics">
+          <!--<statistics-tree ref="statisticsTree" :treeData="edgesTreeData" :treeNum="edgesNum" :edgesTreeData="edgesTreeData"></statistics-tree>-->
+          <ul>
+            <li v-for="(group,index) in edgesTreeData" class="group-li">
+               <span @mouseenter="addHighlight" @mouseleave="cancelHighlight" style="cursor: pointer;display: inline-block;">
+                <Icon @click="treeGroupUnfold(edgesTreeData, group, 'edge')" type="ios-arrow-forward" :class="!!group.show?'isUnfold':''"></Icon>
+                <span @click="treeGroupUnfold(edgesTreeData, group, 'edge')" class="f-csp statistics-group-span">{{group.name}}</span>
+                  <div class="edge-checklist" @click="checkEdges(index,group.type)">
+                <span class="edgeIcon"><Icon type="md-checkmark" /></span>
+              </div>
+              </span>
+
+
+              <div class="statistics-group-container">
+                <div class="progress-content" style="margin-left: 74px">
+                  <div class="length-vo" :title="group.children.length">{{group.children.length}}</div>
+                  <div class="ivu-progress ivu-progress-normal">
+                    <div class="ivu-progress-outer">
+                      <div class="ivu-progress-inner" style="background-color: #afabaa73">
+                        <div class="ivu-progress-bg" :style="{width:getPercent(edgesNum, group.children), height:'5px'}"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-show="!!group.show">
+                <ul style="margin-left: 20px">
+                  <li class="edge-li f-csp" style="list-style: none;margin: 8px 4px ;padding: 0 8px;white-space: nowrap;outline: 0;"
+                      v-for="edge in group.children" :class="edge.select" :name= "edge.id">
+                    <span class="f-csp" @mouseenter="addHighlight" @mouseleave="cancelHighlight"
+                          @click="graphEdgeSelect(edge, $event)">{{edge.source.name}} -> {{edge.target.name}}</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</template>
+
+
+<script>
+  import {URL} from "../../../api/urlsConfig"
+  // import StatisticsTree from "./statistics/StatisticsTree"
+  import GraphicalStatistics from "./statistics/GraphicalStatistics"
+  import * as SelectManage from "../../pages/graph/js/selectManage"
+
+  export default {
+    name: "statistics",
+    data() {
+      return {
+        ischeckCls:true,
+        islistcheck:false,
+        isedgecheck:true,
+        nodeTypelength:'',
+        edgesTypelength:'',
+        statisticsInfoName: '整体信息',
+        menu: {
+          isShowGraphicalStatistics: true,
+          isShowNodeStatistics: true,
+          isShowEdgeStatistics: true,
+        },
+        nodeSearchContent: '',
+        edgeSearchContent: '',
+        paramsDegree: [
+          "度中心度",
+          "接近中心度",
+          "中介中心度",
+          "偏心距",
+          "pageRank"
+        ],
+        paramsDegreeModel:'度中心度',
+        taskData: {},
+        nodesNum: '',
+        edgesNum: '',
+        allNodesTreeData: [],
+        nodesTreeData: [],
+        allEdgesTreeData: [],
+        edgesTreeData: [],
+        showObjectList:false
+      }
+    },
+
+    components: {
+      // StatisticsTree
+      GraphicalStatistics
+    },
+
+    created() {
+    },
+
+    mounted() {
+      this.initOverallStatistics();
+      this.userInfoEnter();
+      // window.onresize = () => {
+      //   this.calcHeight();
+      // }
+    },
+    watch:{
+      // menu:{
+      //   handler(newVal,oldVal){
+      //     this.$nextTick(function(){
+      //       this.calcHeight();
+      //     })
+      //   },
+      //   deep:true,
+      //   immediate:true
+      // }
+    },
+    methods: {
+      //关系全选
+      alledgesCheck(){
+        let currentModel = this.$store.state.currentGraphModel;
+        let cy = currentModel.cy;
+       this.isedgecheck=!this.isedgecheck;
+       if(this.isedgecheck==false){
+         $(".main-clsedge").addClass("mainCurrent");
+         $("#statistics .edge-checklist").addClass("edge-Current");
+         $(".edgeIcon").addClass("edgeIconCurrent")
+         cy.edges().hide()
+
+       }else {
+         $(".main-clsedge").removeClass("mainCurrent");
+         //关系选中
+         $("#statistics .edge-checklist").removeClass("edge-Current");
+         $(".edgeIcon").removeClass("edgeIconCurrent")
+         cy.edges().show()
+       }
+      },
+      //全选
+      allCheck(){
+        let currentModel = this.$store.state.currentGraphModel;
+        let cy = currentModel.cy;
+        this.ischeckCls=!this.ischeckCls;
+        if(this.ischeckCls==false){
+          $(".main-clsf").addClass("checkclsCurrent");
+          //关系全选取消
+          // this.isedgecheck=false;
+          $(".main-clsedge").css({backgroundColor:'#9D9E96',cursor:"no-drop",pointerEvents:'none'})
+          $(".edge-checklist").css({backgroundColor:'#9D9E96',cursor:"no-drop",pointerEvents:'none'})
+          // $(".main-clsedge").addClass("mainCurrent");
+          //对象取消选中
+          $("#statistics .cls-checklist").addClass("CurrentChecklist");
+          $(".clsIcon").addClass("clsIconInit");
+          //关系取消选中
+          this.isedgecheck=false
+          $("#statistics .edge-checklist").addClass("edge-Current");
+          $(".edgeIcon").addClass("edgeIconCurrent")
+          _.filter(cy.nodes(),function (node) {
+              node.data().tollMark=0;
+              node.data().rgtMrk=1;
+               node.hide()
+          })
+          _.filter(cy.edges(),function (edges) {
+            edges.data().tollMark=0;
+            edges.data().rgtMrk=1;
+            edges.hide()
+          })
+
+         //自定义标记隐藏
+          _.filter(cy.nodes(),function (elv) {
+            if (elv._private.classes.size > 0) {
+              var name = elv.data().name
+              let el = document.getElementById(`${name}_label`);
+              if (el) {
+                el.parentNode.style.display = "none";
+              }
+            }
+          })
+        }else {
+          $(".main-clsf").removeClass("checkclsCurrent");
+          //关系全选
+          // this.isedgecheck=true;
+          // $(".main-clsedge").removeClass("mainCurrent");
+          $(".main-clsedge").css({backgroundColor:'#346ac8',cursor:"pointer",pointerEvents:'auto'})
+          $(".edge-checklist").css({backgroundColor:'#346ac8',cursor:"pointer",pointerEvents:'auto'})
+          //对象选中
+          $("#statistics .cls-checklist").removeClass("CurrentChecklist");
+          $(".clsIcon").removeClass("clsIconInit");
+          //关系选中
+          this.isedgecheck=true;
+          $("#statistics .edge-checklist").removeClass("edge-Current");
+          $("#statistics .edge-checklist").each(function () {
+            $(this).css({backgroundColor:"#346ac8",cursor:"pointer",pointerEvents:"auto"})
+          })
+          $(".edgeIcon").removeClass("edgeIconCurrent")
+
+          cy.nodes().show()
+          cy.edges().show()
+          //自定义标记显示o
+          _.filter(cy.nodes(),function (elo) {
+            if (elo._private.classes.size > 0) {
+              var name = elo.data().name
+              let el = document.getElementById(`${name}_label`);
+              if (el) {
+                el.parentNode.style.display = "block";
+              }
+            }
+          })
+        }
+      },
+      //单选对象
+      checkList(index,type){
+        //获取所有对象对应的关系
+        let _this = this;
+
+        let baseDictionData = this.$store.state.queryBaseDictionData;
+        let nodePro = baseDictionData.nodePro;
+        let currentPro=_.find(nodePro,{'label':type}).edgeList;
+        //获取关系
+        let currentModel = this.$store.state.currentGraphModel;
+        let cy = currentModel.cy;
+        let currentList= $("#statistics .cls-checklist")[index];
+         let sel= currentList.children[0];
+           if(currentList.classList.contains('CurrentChecklist') === true){
+             currentList.classList.remove("CurrentChecklist");
+             //关系全选置启用
+             $(".main-clsedge").css({backgroundColor:'#346ac8',cursor:"pointer",pointerEvents:'auto'})
+             sel.classList.remove("clsIconInit");
+             if(currentPro!=undefined){
+             $("#edgeGroup-main .statistics-group-span").each(function () {
+               let _thisv=$(this)
+               let innertext=_thisv.html()
+               for(let i=0;i<currentPro.length;i++){
+                 if(currentPro[i].name==innertext){
+                   _thisv.next().css({backgroundColor:'#346ac8',cursor:"pointer",pointerEvents:'auto'})
+                 }
+               }
+             })
+             }
+             _.filter(cy.nodes(),function (node) {
+               if(node.data().type==type){
+                 node.data().tollMark=0;
+                 node.data().rgtMrk=0;
+                 node.show();
+                 //自定义标记显示
+                 if (node._private.classes.size > 0) {
+                   var name = node.data().name
+                   let el = document.getElementById(`${name}_label`);
+                   if (el) {
+                     el.parentNode.style.display = "block";
+                   }
+                 }
+               }
+             })
+           }else {
+             currentList.classList.add("CurrentChecklist");
+             sel.classList.add("clsIconInit");
+             //关系全选置禁用
+             $(".main-clsedge").css({backgroundColor:'#9D9E96',cursor:"no-drop",pointerEvents:'none'})
+             if(currentPro!=undefined){
+             $("#edgeGroup-main .statistics-group-span").each(function () {
+               let _thisv=$(this)
+               let innertext=_thisv.html()
+               for(let i=0;i<currentPro.length;i++){
+                 if(currentPro[i].name==innertext){
+                   _thisv.next().css({backgroundColor:'#9D9E96',cursor:"no-drop",pointerEvents:'none'})
+                 }
+               }
+             })
+             }
+             _.filter(cy.nodes(),function (node) {
+               if(node.data().type==type){
+                 //右侧统计隐藏关系点添加标识
+                 node.data().tollMark=0;
+                 node.data().rgtMrk=1;
+                 node.hide();
+                 //自定义标记隐藏
+                 if (node._private.classes.size > 0) {
+                   var name = node.data().name
+                   let el = document.getElementById(`${name}_label`);
+                   if (el) {
+                     el.parentNode.style.display = "none";
+                   }
+                 }
+               }
+             })
+           }
+           let el=document.getElementsByClassName("CurrentChecklist");
+           let elDeg=document.getElementsByClassName("edgeIconCurrent");
+           if(el.length==0&&elDeg.length==0){
+             $(".main-clsf").removeClass("checkclsCurrent");
+             this.ischeckCls=true;
+           }else if(el.length !=0||elDeg.length!=0) {
+             $(".main-clsf").addClass("checkclsCurrent");
+             this.ischeckCls=false;
+           }
+
+      },
+      //单选边
+      checkEdges(index,type){
+        let currentModel = this.$store.state.currentGraphModel;
+        let cy = currentModel.cy;
+        let currentEdges= $("#statistics .edge-checklist")[index];
+        let edges= currentEdges.children[0];
+        if(currentEdges.classList.contains("edge-Current")==true){
+          currentEdges.classList.remove("edge-Current");
+          edges.classList.remove("edgeIconCurrent");
+          _.filter(cy.edges(),function (edge) {
+            if(edge.data().type==type){
+              edge.data().tollMark=0;
+              edge.data().rgtMrk=0;
+              edge.show()
+            }
+          })
+        }else {
+          currentEdges.classList.add("edge-Current");
+          edges.classList.add("edgeIconCurrent");
+          _.filter(cy.edges(),function (edge) {
+           if(edge.data().type==type){
+             //右侧统计隐藏关系点添加标识
+             edge.data().tollMark=0;
+             edge.data().rgtMrk=1;
+             edge.hide()
+           }
+          })
+        }
+        // let el=document.getElementsByClassName("CurrentChecklist");
+        let elDeg=document.getElementsByClassName("edgeIconCurrent");
+        // if(el.length==0&&elDeg.length==0){
+        //   $(".main-clsf").removeClass("checkclsCurrent");
+        //   this.ischeckCls=true;
+        // }else if(el.length !=0||elDeg.length!=0) {
+        //   $(".main-clsf").addClass("checkclsCurrent");
+        //   this.ischeckCls=false;
+        // }
+        if(elDeg.length==0){
+          $(".main-clsedge").removeClass("mainCurrent");
+          this.isedgecheck=true;
+        }else {
+          $(".main-clsedge").addClass("mainCurrent");
+          this.isedgecheck=false;
+        }
+
+      },
+      unfold(type, unfoldType) {
+        this.menu[type] = !this.menu[type];
+        this.$forceUpdate();
+        this.calcHeight(unfoldType)
+      },
+
+      //动态计算对象和关系容器高度
+      calcHeight(unfoldType){
+        let _this = this;
+        this.$nextTick(function(){
+          let fullHeight = $("#statistics").height();
+          let statisticsInfoHeight =  _.replace($(".statistics-info").css("height"),'px', '');
+          statisticsInfoHeight = isNaN(parseInt(statisticsInfoHeight)) ? 133 : parseInt(statisticsInfoHeight);
+          if(_this.menu.isShowGraphicalStatistics){
+            fullHeight -= statisticsInfoHeight;
+          }
+          else {
+            fullHeight -= 33;
+          }
+          fullHeight-=100;
+
+          let avgHeight = (fullHeight-statisticsInfoHeight)/2 - 33;
+          let edgeGroupHeight =  _.replace($(".edge-group-main").css("height"),'px', '');
+          let nodeGroupHeight =  _.replace($(".node-group-main").css("height"),'px', '');
+          if(unfoldType !== 'info' && (unfoldType === 'node' || unfoldType === 'edge')){
+
+            //当对象类型或者关系类型已经大于平均，两个均设置平均
+            if(nodeGroupHeight > avgHeight && edgeGroupHeight > avgHeight){
+              $(".node-group-main").css({"max-height": fullHeight / 2 + 'px'});
+              $(".edge-group-main").css({"max-height": fullHeight / 2 + 'px'});
+            }else if(nodeGroupHeight <= avgHeight){
+              let edgeGroupMaxHeight = isNaN(parseInt(nodeGroupHeight)) ? avgHeight : fullHeight - parseInt(nodeGroupHeight);
+              $(".edge-group-main").css({"max-height": edgeGroupMaxHeight + 'px'});
+            }else if(edgeGroupHeight <= avgHeight){
+              let nodeGroupHeight = isNaN(parseInt(edgeGroupHeight)) ? avgHeight : fullHeight - parseInt(edgeGroupHeight);
+              $(".node-group-main").css({"max-height": nodeGroupHeight + 'px'});
+            }else {
+              $(".node-group-main").css({"max-height": fullHeight / 2 + 'px'});
+              $(".edge-group-main").css({"max-height": fullHeight / 2 + 'px'});
+            }
+          }else if (unfoldType === 'info'){
+            if(nodeGroupHeight >= avgHeight && edgeGroupHeight >= avgHeight){
+              $(".node-group-main").css({"max-height": fullHeight / 2 + 'px'});
+              $(".edge-group-main").css({"max-height": fullHeight / 2 + 'px'});
+            }
+          }
+          if (this.menu.isShowEdgeStatistics && !this.menu.isShowNodeStatistics) {
+            $(".edge-group-main").css({"max-height": (fullHeight - 35) + 'px'})
+          } else if (!this.menu.isShowEdgeStatistics && this.menu.isShowNodeStatistics) {
+            $(".node-group-main").css({"max-height": (fullHeight - 35) + 'px'})
+          }
+
+        })
+      },
+
+
+      initOverallStatistics() {
+        //清空搜索框
+        this.nodeSearchContent = '';
+        this.edgeSearchContent = '';
+        let currentGraphModel = this.$store.state.currentGraphModel;
+        let allNodes = currentGraphModel.data.nodes;
+        let allEdges = currentGraphModel.data.edges;
+        let nodes = _.flatten(_.map(allNodes, 'data'));
+        let cy = currentGraphModel.cy;
+        this.initContainer(nodes, cy.edges());
+      },
+
+      //选择色卡群组刷新群组统计
+      refreshGroupStatistics(groupData) {
+        this.nodesTreeData = this.allNodesTreeData = [];
+        this.edgesTreeData = this.allEdgesTreeData = [];
+        this.$store.commit("setRightConTabName", "statistics");
+        if(_.isEmpty(groupData)) {
+          this.statisticsInfoName = "整体信息";
+          this.initOverallStatistics();
+          this.$refs.graphicalStatistics.initOverallInfo();
+        }else {
+          this.statisticsInfoName = "团体信息";
+          let nodes = _.flatten(_.map(groupData.nodes, function(node){
+            return node.data()
+          }));
+          this.initContainer(nodes, groupData.edges);
+          this.$refs.graphicalStatistics.initGroupInfo(groupData);
+        }
+        this.isShowNodeStatistics = true;
+        this.isShowEdgeStatistics = true;
+      },
+
+      //统计菜单选中点
+      statisticsSelectNode(selectItem) {
+        //关闭社交指数
+        this.showSocialExponent('');
+
+        this.nodesTreeData = this.allNodesTreeData = [];
+        this.edgesTreeData = this.allEdgesTreeData = [];
+        if(!_.isEmpty(document.querySelector('.node-group-select-span'))) {
+          document.querySelector('.node-group-select-span').classList.remove('node-group-select-span');
+        }
+        if(!_.isEmpty(document.querySelector('.edge-group-select-span'))) {
+          document.querySelector('.edge-group-select-span').classList.remove('edge-group-select-span');
+        }
+        if(!_.isEmpty(selectItem)) {
+          //显示个体信息及相关对象信息
+          if(selectItem.isNode() && selectItem.rightMenuNode){
+            this.showSingleInfo(selectItem);
+          }else {
+            this.initOverallStatistics();
+          }
+          this.$nextTick(function (o) {
+            this.selectUnfold(selectItem)
+          })
+        }else {
+          //未选中点显示整体信息
+          this.statisticsInfoName = "整体信息";
+          this.$refs.graphicalStatistics.initOverallInfo();
+          this.initOverallStatistics();
+          this.isShowNodeStatistics = true;
+          this.isShowEdgeStatistics = true;
+        }
+      },
+
+      //显示个体信息及相关对象信息
+      showSingleInfo (selectItem) {
+        this.statisticsInfoName = '个体信息';
+        this.$refs.graphicalStatistics.initSingleInfo(selectItem.data());
+        //获取当前选中点一级联系人
+        let currentGraphModel = this.$store.state.currentGraphModel;
+        let cy = currentGraphModel.cy;
+        let allNodes = currentGraphModel.data.nodes;
+        let allEdges = cy.edges();
+        let nodes = [];
+        // let edges = _.filter(_.flatten(_.map(allEdges, 'data')), function(edge){
+        //   return edge.source === selectNode.id || edge.target === selectNode.id
+        // });
+        let edges = _.filter(allEdges, function (edge) {
+          if (edge.data().source === selectItem.id() || edge.data().target === selectItem.id()) {
+            nodes.push(edge.source().data());
+            nodes.push(edge.target().data());
+            return edge
+          }
+        });
+        nodes = _.uniqBy(nodes, 'id');
+        this.initContainer(nodes, edges);
+      },
+
+      //选中图中点，依次展开树结构，并高亮显示，移动滚动条显示在视野中
+      selectUnfold(selectItem) {
+        if(selectItem.isNode()){
+          //展开对象父级菜单
+          this.menu.isShowNodeStatistics = true;
+          this.doUnfoldTree(this.nodesTreeData, selectItem.data(), 'node');
+        }else if(selectItem.isEdge()){
+          //展开关系父级菜单
+          this.menu.isShowEdgeStatistics = true;
+          this.doUnfoldTree(this.edgesTreeData, selectItem.data(), 'edge');
+        }
+      },
+
+      doUnfoldTree: function (itemTreeData, selectItem, type) {
+        _.each(itemTreeData, function (itemGroup) {
+          itemGroup.show = false;
+          _.each(itemGroup.children, function (item) {
+            item.select = null;
+          })
+        });
+        _.each(itemTreeData, function (itemGroup) {
+          if (selectItem.type === itemGroup.type) {
+            itemGroup.show = true;
+            _.each(itemGroup.children, function (item) {
+              if (item.id === selectItem.id) {
+                document.getElementsByName(item.id)[0].className = type + '-group-select-span';
+                // item.select = type + '-group-select-span';
+              }
+            })
+          }
+        });
+        this.$forceUpdate();
+        //改变滚动条高度
+        this.$nextTick(function (o) {
+          if(!_.isEmpty(document.querySelector('.' + type + '-group-select-span'))) {
+            let nodeSelectSpanTop = document.querySelector('.' + type + '-group-select-span').offsetTop;
+            let nodeGroupContainerTop = document.getElementById(type + 'Group-container').offsetTop;
+            document.getElementById(type + 'Group-main').scrollTop = nodeSelectSpanTop - nodeGroupContainerTop - 50
+          }
+        })
+      },
+
+      //展开树节点
+      treeGroupUnfold(treeData, group, unfoldType) {
+        const _this = this;
+        _.each(treeData, function (groupTree) {
+          if (group.name === groupTree.name) {
+            groupTree.show = !group.show
+            // if(!flag){
+            //   _this.showObjectList = groupTree.show;
+            // }
+          }
+        });
+        this.$forceUpdate();
+        this.calcHeight(unfoldType);
+      },
+
+      getPercent(allNum, children) {
+        return Math.floor(children.length / allNum * 100) + '%'
+      },
+
+      addHighlight(e) {
+        e.target.style.color = '#2d8cf0'
+      },
+
+      cancelHighlight(e) {
+        e.target.style.color = ''
+      },
+
+      //选中边graph中边轨迹
+      graphEdgeSelect(selectEdge, event){
+        let currentGraphModel = this.$store.state.currentGraphModel;
+        let cy = currentGraphModel.cy;
+        let eId = selectEdge.id;
+        let curEdge = cy.$(`#${eId}`);
+        if(curEdge && !curEdge.hidden()){
+          if(!_.isEmpty(document.querySelector('.node-group-select-span'))) {
+            document.querySelector('.node-group-select-span').classList.remove('node-group-select-span');
+          }
+          if(!_.isEmpty(document.querySelector('.edge-group-select-span'))) {
+            document.querySelector('.edge-group-select-span').classList.remove('edge-group-select-span');
+          }
+          event.target.setAttribute('class', 'edge-group-select-span');
+          if(selectEdge.source.name !== selectEdge.target.name){
+            SelectManage.drawEdgeTrack(selectEdge.id, event)
+          }
+        }else {
+          this.$Message.warning('该关系处于隐藏状态')
+        }
+      },
+
+      //选中点或者类型高亮graph图显示
+      graphNodeSelect(node, event) {
+        if(!_.isEmpty(document.querySelector('.node-group-select-span'))) {
+          document.querySelector('.node-group-select-span').classList.remove('node-group-select-span');
+        }
+        if(!_.isEmpty(document.querySelector('.edge-group-select-span'))) {
+          document.querySelector('.edge-group-select-span').classList.remove('edge-group-select-span');
+        }
+        event.target.setAttribute('class', 'node-group-select-span');
+        SelectManage.selectNodeOnGraph(node.id);
+      },
+
+      //初始化节点树，关系树
+      initContainer(nodes, edges) {
+        let _this = this;
+        let baseDictionData = this.$store.state.queryBaseDictionData;
+        let nodePro = baseDictionData.nodePro;
+        let edgePro = baseDictionData.edgePro;
+        this.nodesNum = nodes.length;
+        this.edgesNum = edges.length;
+
+        //获取图上点的所有类型
+        let nodeTypeGroup = _.groupBy(nodes, 'type');
+        _.each(nodeTypeGroup, function (children, nodeType) {
+          let nodeVo = _.find(nodePro, {'label' : nodeType});
+          _this.allNodesTreeData.push({
+            name: _.isEmpty(nodeVo) ? nodeType: nodeVo.name,
+            type:nodeType,
+            children: children
+          });
+        });
+
+        this.nodesTreeData = this.allNodesTreeData;
+        this.nodeTypelength=this.nodesTreeData.length;
+        //获取图上边的所有类型
+        let edgeTypeGroup = _.groupBy(edges, function (edge) {
+          return edge.data('type')
+        });
+
+        let edgeTypeList = [];
+        //遍历分组
+        _.each(edgeTypeGroup, function (edgeElementS, edgeType) {
+          let edgeVo = _.find(edgePro, {'label' : edgeType});
+          let name = _.isEmpty(edgeVo) ? edgeType: edgeVo.name;
+          let children = [];
+          _.each(edgeElementS, function (edgeEle) {
+            let edgeData = edgeEle.data();
+            children.push({
+              totalMins: edgeData.totalMins,
+              totalTimes: edgeData.totalTimes,
+              weight: edgeData.weight,
+              id: edgeData.id,
+              source: edgeEle.source().data(),
+              target: edgeEle.target().data(),
+              type: edgeData.type,
+            })
+          });
+          _this.allEdgesTreeData.push({
+            name: name,
+            type: edgeType,
+            children: children,
+          });
+          edgeTypeList.push({name: name, label: edgeType});
+        });
+        this.$store.commit('setEdgeTypeList', edgeTypeList);
+        this.edgesTreeData = this.allEdgesTreeData;
+        this.edgesTypelength=this.edgesTreeData.length;
+      },
+
+      //展示当前类型社交参数
+      showSocialExponent(typeGroup) {
+        this.$emit('showSocialExponent', typeGroup)
+      },
+
+      //过滤搜索对象
+      searchNodeStatistics(content) {
+        if(!_.isEmpty(document.querySelector('.node-group-select-span'))) {
+          document.querySelector('.node-group-select-span').classList.remove('node-group-select-span');
+        }
+        this.nodesTreeData = this.searchFilter(content, this.allNodesTreeData);
+      },
+
+      //过滤搜索关系
+      searchEdgeStatistics(content) {
+        if(!_.isEmpty(document.querySelector('.edge-group-select-span'))) {
+          document.querySelector('.edge-group-select-span').classList.remove('edge-group-select-span');
+        }
+        this.edgesTreeData = this.searchFilter(content, this.allEdgesTreeData);
+      },
+
+      //过滤搜索
+      searchFilter(content, allTreeData) {
+        let filterTreeData = [];
+        _.each(allTreeData, function (nodeType) {
+          let filterNodeType;
+          let children = _.filter(nodeType.children, function(node){
+            if(node.name){
+              return _.includes(node.name,content);
+            }
+            else {
+              return _.includes(node.source.name, content) || _.includes(node.target,name, content);
+            }
+          });
+          let name = nodeType.name;
+          let type = nodeType.type;
+          filterTreeData.push({children: children, name: name, type: type, show: true});
+        });
+        return filterTreeData;
+      },
+      //介绍
+      //使用说明动画
+      userInfoEnter(){
+        $('#question-group').mouseenter(function () {
+          $('.modelinfos').animate({},function () {
+            $('.modelinfos').css({
+              'transform':'scale(1)'
+            })
+          })
+        });
+        $('#question-group').mouseleave(function () {
+          $('.modelinfos').animate({},function () {
+            $('.modelinfos').css({
+              'transform':'scale(0)'
+            })
+          })
+        })
+      }
+    }
+  }
+</script>
+
+
+<style scoped lang="less">
+  .cls-num{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 42px;
+    vertical-align: middle;
+  }
+  .main-clsedge{
+    width: 15px;
+    height: 15px;
+    background:#346ac8;
+    position: absolute;
+    top: 9px;
+    margin-left: 147px;
+    border-radius: 3px;
+  }
+  .mainCurrent{
+    width: 15px;
+    height: 15px;
+    background: #5d65a5;
+    position: absolute;
+    top: 9px;
+    margin-left: 147px;
+    border-radius: 3px;
+  }
+  .edge-checklist{
+    width: 15px;
+    height: 15px;
+    background:#346ac8 ;
+    position: absolute;
+    top: 12px;
+    margin-left: 116px;
+    border-radius: 3px;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .edge-Current{
+    width: 15px;
+    height: 15px;
+    background: #5d65a5;
+    position: absolute;
+    top: 12px;
+    margin-left: 116px;
+    border-radius: 3px;
+  }
+  .edgeIcon{
+    display: block;
+  }
+  .edgeIconCurrent{
+    display: none;
+  }
+  .clsIcon{
+    display: block;
+  }
+  .clsIconInit{
+    display: none;
+  }
+  .cls-checklist{
+    width: 15px;
+    height: 15px;
+    background: #346ac8;
+    position: absolute;
+    top: 10px;
+    margin-left: 116px;
+    border-radius: 3px;
+
+  }
+  .CurrentChecklist{
+    width: 15px;
+    height: 15px;
+    background:#5d65a5 ;
+    position: absolute;
+    top: 10px;
+    margin-left: 116px;
+    border-radius: 3px;
+  }
+  .main-clsf{
+    width: 15px;
+    height: 15px;
+    background:#346ac8;
+    position: absolute;
+    top: 9px;
+    margin-left: 147px;
+    border-radius: 3px;
+
+  }
+  .checkclsCurrent{
+    width: 15px;
+    height: 15px;
+    background: #5d65a5;
+    position: absolute;
+    top: 9px;
+    margin-left: 147px;
+    border-radius: 3px;
+  }
+  .main-clsf .ivu-icon {
+    color: white;
+    font-size: 13px;
+  }
+  .modelinfos{
+    width: 290px;
+    position: absolute;
+    top: 6px;
+    z-index: 999;
+    background: #6269A9;
+    border-radius: 3px;
+     transform: scale(0);
+    padding: 10px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  >p{
+    padding:2px 3px;
+    color:#fff;
+    margin-left: 10px;
+  }
+  .mainTitle{
+    color: #FF6699;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 10px;
+  }
+  .headTitle{
+    color: #DB7172;
+    font-size: 15px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  }
+  #statistics {
+    margin-top: -10px;
+    height:100%;
+  }
+  .statistics-container {
+    position: relative;
+    padding-bottom: 3px
+  }
+
+  .statistics-icon {
+    font-size: 20px;
+
+  }
+  .statistics-li {
+    margin: 5px 0;
+    list-style: none;
+    position: relative;
+  }
+
+  .isUnfold {
+    transform: rotate(90deg);
+  }
+
+  #statistics .menu-main {
+    max-height: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+/*  .edge-group-main{
+    max-height: 550px!important;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }*/
+  /*.last-menu-main{
+    max-height: 340px;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }*/
+  .node-group-main{
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+  .edge-group-main{
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+  .progress-content {
+    width: 70px;
+    float: right;
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+
+  #statistics .group-li {
+    list-style: none;
+    margin: 8px 0;
+    padding: 0;
+    white-space: nowrap;
+    outline: 0;
+    position: relative;
+  }
+
+    /*.node-group-select-span, .edge-group-select-span {*/
+    /*background-color: #c8d3d2;*/
+    /*border-radius: 3px;*/
+  /*}*/
+
+  #statistics .length-vo {
+    margin-right: 10px;
+    font-size: 12px;
+    width: 30px;
+    float: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    /*vertical-align: middle;*/
+  }
+
+  .statisticsSearch {
+    width: 90px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 4px;
+  }
+
+  .statistics-group-span {
+    display: inline-flex;
+    cursor: pointer;
+    width: 80px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .statistics-group-container {
+    display:inline-block;
+  }
+
+</style>

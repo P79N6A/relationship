@@ -1,0 +1,77 @@
+'use strict'
+const utils = require('./utils')
+const webpack = require('webpack')
+const config = require('../config')
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.base.conf')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const portfinder = require('portfinder')
+
+const devWebpackConfig = merge(baseWebpackConfig, {
+  module: {
+    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
+  },
+  // cheap-module-eval-source-map is faster for development
+  devtool: config.dev.devtool,
+
+  // 提供一个可选的本地开发服务器，可以监听代码的修改
+  devServer: {
+    clientLogLevel: 'warning',
+    historyApiFallback: true,   //不跳转，所有跳转指向index.html
+    hot: true,     //自动刷新参数
+    compress: true,
+    host: process.env.HOST || config.dev.host,
+    port: process.env.PORT || config.dev.port,    //设置监听端口
+    open: config.dev.autoOpenBrowser,
+    overlay: config.dev.errorOverlay ? {
+      warnings: false,
+      errors: true,
+    } : false,
+    publicPath: config.dev.assetsPublicPath,
+    proxy: config.dev.proxyTable,
+    quiet: true, // necessary for FriendlyErrorsPlugin
+    watchOptions: {
+      poll: config.dev.poll,
+    }
+  },
+  plugins: [
+    new webpack.DefinePlugin({    //为依赖定义环境变量
+      'process.env': require('../config/dev.env')
+    }),
+    new webpack.HotModuleReplacementPlugin(),   //热加载插件
+    new webpack.NamedModulesPlugin(), // 便于查看要修补的依赖
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true
+    }),    //html模板插件
+  ]
+})
+
+module.exports = new Promise((resolve, reject) => {
+  portfinder.basePort = process.env.PORT || config.dev.port
+  portfinder.getPort((err, port) => {
+    if (err) {
+      reject(err)
+    } else {
+      // publish the new Port, necessary for e2e tests
+      process.env.PORT = port
+      // add port to devServer config
+      devWebpackConfig.devServer.port = port
+
+      // Add FriendlyErrorsPlugin
+      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+        compilationSuccessInfo: {
+          messages: [`Your application is running here: http://${config.dev.host}:${port}`],
+        },
+        onErrors: config.dev.notifyOnErrors
+          ? utils.createNotifierCallback()
+          : undefined
+      }))
+
+      resolve(devWebpackConfig)
+    }
+  })
+})

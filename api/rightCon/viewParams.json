@@ -1,0 +1,32 @@
+{
+  "code": 200,
+  "data": {
+    "accountVo": {
+      "degree": "1",
+      "edgeLabel": "",
+      "endTime": "2019-2-28 21:22:32",
+      "nodeLabel": "",
+      "parpamVo": {
+        "type": "user",
+        "value": "46316335360\n45557654784\n45557654734\n45557654224\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784\n45222654784"
+      },
+      "startTime": "2019-2-26 21:22:32"
+    },
+    "createUser": "admin",
+    "createUserId": "1032",
+    "createtime": "2019-02-26",
+    "inputCount": 2,
+    "isDelete": "0",
+    "outputCount": 153,
+    "rid": "rfs81404ac8838765415a43e",
+    "rname": "关系呈现-2",
+    "rstatus": "4",
+    "rtype": "205",
+    "sendTimes": 0,
+    "successCount": 155,
+    "taskId": "rfs55317a2075713250259e1",
+    "taskStatusValue": "执行成功",
+    "taskTypeValue": "寄递物流查询"
+  },
+  "msg": "success"
+}

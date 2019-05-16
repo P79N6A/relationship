@@ -1,0 +1,22 @@
+{
+  "code": 200,
+  "data": [
+    {
+        "type": "hm",
+        "value": ""
+    },
+
+    {
+      "type": "msi",
+      "value": ""
+
+
+    },
+    {
+      "type": "mei",
+      "value": ""
+
+    }
+  ],
+  "msg": "success"
+}

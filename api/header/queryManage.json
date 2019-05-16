@@ -1,0 +1,11 @@
+{
+  "code":200,
+  "data":{
+    "caseManage":"http://192.168.1.14:10148/caseManageList",
+    "flowManage":"http://192.168.1.14:8789",
+    "permissionManage":"http://192.168.1.14:9014",
+    "userManage":"http://192.168.1.14:10147",
+    "baseManage":"http://192.168.1.51:8083/data"
+  },
+  "msg":"success"
+}

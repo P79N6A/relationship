@@ -1,0 +1,9 @@
+@import url('./myTheme.less');
+
+
+.themea{
+  .themea();
+}
+.themeb {
+  .themeb();
+}

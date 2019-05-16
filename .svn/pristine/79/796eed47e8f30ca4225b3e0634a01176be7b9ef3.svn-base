@@ -1,0 +1,168 @@
+{
+  "code": 200,
+  "data": {
+    "nodes": [
+      {"data": {
+          "name": 331,
+          "id": "331",
+          "type": "user",
+          "flag1":3,
+          "classes":"round"
+        }
+      },
+      {"data": {
+          "name": 332,
+          "id": "332",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 333,
+          "id": "333",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 334,
+          "id": "334",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 335,
+          "id": "335",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 336,
+          "id": "336",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 337,
+          "id": "337",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 338,
+          "id": "338",
+          "type": "user",
+          "flag1":3
+        }},
+      {"data": {
+          "name": 339,
+          "id": "339",
+          "type": "user",
+          "flag1":3
+        }},
+      {
+        "data": {
+          "name": 3310,
+          "id": "3310",
+          "type": "user",
+          "flag1":3
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "331>1>>1717",
+          "source": "331",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+        }
+      },
+      {
+        "data": {
+          "id": "332>1>>1717",
+          "source": "332",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+        }
+      },
+      {
+        "data": {
+          "id": "333>1>>1717",
+          "source": "333",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+
+        }
+      },
+      {
+        "data": {
+          "id": "334>1>>1717",
+          "source": "334",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+        }
+      },
+      {
+        "data": {
+          "id": "335>1>>1717",
+          "source": "335",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+
+        }
+      },
+      {
+        "data": {
+          "id": "336>1>>1717",
+          "source": "336",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+
+        }
+      },
+      {
+        "data": {
+          "id": "337>1>>1717",
+          "source": "337",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+
+        }
+      },
+      {
+        "data": {
+          "id": "338>1>>1717",
+          "source": "338",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+      }
+      },
+      {
+        "data": {
+          "id": "339>1>>1717",
+          "source": "339",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+        }
+      },
+      {
+        "data": {
+          "id": "3310>1>>1717",
+          "source": "3310",
+          "type": "comm",
+          "target": "1717",
+          "flag1":3
+        }
+      }
+    ]
+  },
+  "msg": "success"
+}

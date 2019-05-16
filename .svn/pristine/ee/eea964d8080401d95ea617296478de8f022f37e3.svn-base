@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "data": {
+    "currentUserLabel": [
+      {
+        "labelCode": "0001",
+        "labelName": "迭代"
+      },
+      {
+        "labelCode": "0002",
+        "labelName": "各规格"
+      },
+      {
+        "labelCode": "0003",
+        "labelName": "涉赌"
+      }
+    ],
+    "otherUsersLabel": [
+      {
+        "labelCode": "0004",
+        "labelName": "涉毒"
+      }
+    ]
+  },
+  "msg": "success"
+}

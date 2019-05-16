@@ -1,0 +1,146 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "expand": false,
+                      "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/case.png",
+                      "id": "4028818e682c028e01682c077c1c0000",
+                      "isLeaf": true,
+                      "isParent": false,
+                      "loading": false,
+                      "showButton": "1",
+                      "title": "测试案件",
+                      "type": "case"
+                    }
+                  ],
+                  "expand": true,
+                  "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/casetype.png",
+                  "id": "2",
+                  "isLeaf": false,
+                  "isParent": true,
+                  "loading": false,
+                  "showButton": "",
+                  "title": "立线类",
+                  "type": "casetype"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "expand": false,
+                      "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/case.png",
+                      "id": "4028818e682c028e01682c0938e30003",
+                      "isLeaf": true,
+                      "isParent": false,
+                      "loading": false,
+                      "showButton": "1",
+                      "title": "测试02",
+                      "type": "case"
+                    }
+                  ],
+                  "expand": false,
+                  "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/casetype.png",
+                  "id": "4",
+                  "isLeaf": false,
+                  "isParent": true,
+                  "loading": false,
+                  "showButton": "",
+                  "title": "重大警情类",
+                  "type": "casetype"
+                }
+              ],
+              "expand": true,
+              "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/dep.png",
+              "id": "1",
+              "isLeaf": false,
+              "isParent": true,
+              "loading": false,
+              "showButton": "",
+              "title": "总机构",
+              "type": "dep"
+            }
+          ],
+          "expand": true,
+          "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/status.png",
+          "id": "0",
+          "isLeaf": false,
+          "isParent": true,
+          "loading": false,
+          "showButton": "",
+          "title": "在办",
+          "type": "status"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "expand": false,
+                      "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/case.png",
+                      "id": "4028810e672b021501672b1179280000",
+                      "isLeaf": true,
+                      "isParent": false,
+                      "loading": false,
+                      "showButton": "",
+                      "title": "测试案件01",
+                      "type": "case"
+                    }
+                  ],
+                  "expand": false,
+                  "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/casetype.png",
+                  "id": "4",
+                  "isLeaf": false,
+                  "isParent": true,
+                  "loading": false,
+                  "showButton": "",
+                  "title": "重大警情类",
+                  "type": "casetype"
+                }
+              ],
+              "expand": false,
+              "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/dep.png",
+              "id": "1",
+              "isLeaf": false,
+              "isParent": true,
+              "loading": false,
+              "showButton": "",
+              "title": "总机构",
+              "type": "dep"
+            }
+          ],
+          "expand": false,
+          "icon": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/status.png",
+          "id": "1",
+          "isLeaf": false,
+          "isParent": true,
+          "loading": false,
+          "showButton": "",
+          "title": "结案",
+          "type": "status"
+        }
+      ],
+      "expand": true,
+      "iconClose": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/root_close.png",
+      "iconOpen": "/rfs/resources/zTree_v3/css/zTreeStyle/img/diy/root_open.png",
+      "id": "",
+      "isLeaf": false,
+      "isParent": true,
+      "loading": false,
+      "title": "全部",
+      "type": "root"
+    }
+  ],
+  "msg": "success"
+}

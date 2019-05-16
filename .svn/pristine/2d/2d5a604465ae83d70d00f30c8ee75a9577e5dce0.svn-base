@@ -1,0 +1,1010 @@
+{
+  "code": 200,
+  "data": {
+    "edgePro": [{
+      "targetVertex": "user",
+      "name": "通联关系",
+      "proList": [],
+      "label": "comm",
+      "propertyDe": [{
+        "align": "center",
+        "dataType": "String",
+        "key": "source",
+        "labelCode": "00001",
+        "sortable": false,
+        "title": "服务号码"
+      },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "target",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "对方号码"
+        },
+        {
+          "align": "center",
+          "dataType": "Long",
+          "key": "ts",
+          "sortable": false,
+          "title": "时间",
+          "value": "0"
+        },
+        {
+          "align": "center",
+          "dataType": "Integer",
+          "key": "duration",
+          "labelCode": "",
+          "sortable": true,
+          "title": "通联时长(s)"
+        }],
+      "dyFlag": true,
+      "properties": [{
+        "align": "center",
+        "dataType": "String",
+        "key": "source",
+        "labelCode": "00001",
+        "sortable": false,
+        "title": "服务号码"
+      },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "sourceName",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "服务方姓名"
+        },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "sourceOrigin",
+          "labelCode": "00006",
+          "sortable": false,
+          "title": "服务方来源地"
+        },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "target",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "对方号码"
+        },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "targetName",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "对方姓名"
+        },
+        {
+          "align": "center",
+          "dataType": "String",
+          "key": "targetOrigin",
+          "labelCode": "00006",
+          "sortable": false,
+          "title": "对方来源地"
+        },
+        {
+          "align": "center",
+          "dataType": "Integer",
+          "key": "relationTimes",
+          "labelCode": "",
+          "sortable": true,
+          "title": "通联总次数(次)"
+        },
+        {
+          "align": "center",
+          "dataType": "Integer",
+          "key": "callTimes",
+          "labelCode": "",
+          "sortable": true,
+          "title": "主叫次数"
+        },
+        {
+          "align": "center",
+          "dataType": "Integer",
+          "key": "calledTimes",
+          "labelCode": "",
+          "sortable": true,
+          "title": "被叫次数"
+        },
+        {
+          "align": "center",
+          "dataType": "Integer",
+          "key": "relationMins",
+          "labelCode": "",
+          "sortable": true,
+          "title": "通联总时长(s)"
+        }],
+      "sourceVertex": "user"
+    },
+      {
+        "targetVertex": "user",
+        "name": "寄递关系",
+        "proList": [],
+        "label": "ee",
+        "propertyDe": [{
+          "align": "center",
+          "dataType": "String",
+          "key": "source",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "服务号码"
+        },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "target",
+            "labelCode": "00001",
+            "sortable": false,
+            "title": "对方号码"
+          },
+          {
+            "align": "center",
+            "dataType": "Long",
+            "key": "ts",
+            "sortable": false,
+            "title": "时间",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "adr",
+            "sortable": false,
+            "title": "地址",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "bn",
+            "sortable": false,
+            "title": "运单号",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "co",
+            "sortable": false,
+            "title": "公司",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "nm",
+            "sortable": false,
+            "title": "名称",
+            "value": "0"
+          }],
+        "dyFlag": true,
+        "properties": [{
+          "align": "center",
+          "dataType": "String",
+          "key": "source",
+          "labelCode": "00001",
+          "sortable": false,
+          "title": "服务号码"
+        },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "target",
+            "labelCode": "00001",
+            "sortable": false,
+            "title": "对方号码"
+          },
+          {
+            "align": "center",
+            "dataType": "Integer",
+            "key": "extotalTimes",
+            "labelCode": "",
+            "sortable": true,
+            "title": "寄递总次数"
+          },
+          {
+            "align": "center",
+            "dataType": "Integer",
+            "key": "sendTimes",
+            "labelCode": "",
+            "sortable": true,
+            "title": "寄件次数"
+          },
+          {
+            "align": "center",
+            "dataType": "Integer",
+            "key": "receiveTimes",
+            "labelCode": "",
+            "sortable": true,
+            "title": "收件次数"
+          }],
+        "sourceVertex": "user"
+      },
+      {
+        "targetVertex": "vic",
+        "name": "机主关系",
+        "proList": [],
+        "label": "emo",
+        "propertyDe": [],
+        "dyFlag": false,
+        "properties": [{
+          "align": "center",
+          "key": "source",
+          "sortable": false,
+          "title": "手机号码"
+        },
+          {
+            "align": "center",
+            "key": "target",
+            "sortable": false,
+            "title": "身份证"
+          },
+          {
+            "align": "center",
+            "dataType": "Long",
+            "key": "ts",
+            "sortable": false,
+            "title": "时间",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "st",
+            "sortable": false,
+            "title": "状态",
+            "value": "0"
+          }],
+        "sourceVertex": "user"
+      },
+      {
+        "targetVertex": "vic",
+        "name": "人车关系",
+        "proList": [],
+        "label": "eco",
+        "propertyDe": [],
+        "dyFlag": false,
+        "properties": [{
+          "align": "center",
+          "key": "source",
+          "sortable": false,
+          "title": "车牌号"
+        },
+          {
+            "align": "center",
+            "key": "target",
+            "sortable": false,
+            "title": "身份证"
+          },
+          {
+            "align": "center",
+            "dataType": "Long",
+            "key": "ts",
+            "sortable": false,
+            "title": "时间",
+            "value": "0"
+          },
+          {
+            "align": "center",
+            "dataType": "String",
+            "key": "st",
+            "sortable": false,
+            "title": "状态",
+            "value": "0"
+          }],
+        "sourceVertex": "vc"
+      }],
+    "typePro": {
+      "201": "单人分析",
+      "202": "群组分析",
+      "203": "关联发现",
+      "204": "社团扩展",
+      "205": "关系呈现"
+    },
+    "copyRight": "版权所有 © 西安九索数据技术股份有限公司2018-2019 保留所有权利。推荐的屏幕分辨率为1920*1080。",
+    "flagLabel": [{
+      "dicCode": "00022",
+      "dicName": "人口流动状态",
+      "keyGroup": "flagLabel",
+      "parentId": "021",
+      "val1": "1",
+      "val2": ""
+    },
+      {
+        "dicCode": "00023",
+        "dicName": "是否涉农",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00025",
+        "dicName": "是否游客",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00026",
+        "dicName": "外地学生",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00027",
+        "dicName": "骚扰电话",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00028",
+        "dicName": "群发短信",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00029",
+        "dicName": "疑似服务电话",
+        "keyGroup": "flagLabel",
+        "parentId": "021",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00011",
+        "dicName": "一机多卡",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00010",
+        "dicName": "是否换手机",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00009",
+        "dicName": "是否换卡",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00033",
+        "dicName": "夜间活跃",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00032",
+        "dicName": "昼伏夜出",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00030",
+        "dicName": "山寨机",
+        "keyGroup": "flagLabel",
+        "parentId": "022",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00018",
+        "dicName": "语义渉恐",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00031",
+        "dicName": "新疆人",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00016",
+        "dicName": "是否去边境",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00015",
+        "dicName": "重点国家通联",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00014",
+        "dicName": "是否与边境通联",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00013",
+        "dicName": "是否使用小众软件",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00012",
+        "dicName": "是否使用vpn",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00017",
+        "dicName": "宗教场所停留",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00021",
+        "dicName": "是否在控",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00020",
+        "dicName": "是否发过英代维",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      },
+      {
+        "dicCode": "00019",
+        "dicName": "是否维族人",
+        "keyGroup": "flagLabel",
+        "parentId": "023",
+        "val1": "1",
+        "val2": ""
+      }],
+    "properLabel": [{
+      "dicCode": "00000",
+      "dicName": "服务号码",
+      "keyGroup": "properLabel",
+      "parentId": "021",
+      "val1": "0",
+      "val2": ""
+    },
+      {
+        "dicCode": "00034",
+        "dicName": "归属地",
+        "keyGroup": "properLabel",
+        "parentId": "021",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00024",
+        "dicName": "消费能力",
+        "keyGroup": "properLabel",
+        "parentId": "021",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00001",
+        "dicName": "机主姓名",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00002",
+        "dicName": "年龄",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00008",
+        "dicName": "工作地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00007",
+        "dicName": "居住地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00006",
+        "dicName": "来源地",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00005",
+        "dicName": "社会属性",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00004",
+        "dicName": "备注姓名",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      },
+      {
+        "dicCode": "00003",
+        "dicName": "性别",
+        "keyGroup": "properLabel",
+        "parentId": "022",
+        "val1": "0",
+        "val2": ""
+      }],
+    "labelType": [{
+      "dicCode": "024",
+      "dicName": "手动标记",
+      "keyGroup": "labelType",
+      "parentId": "02",
+      "val2": ""
+    },
+      {
+        "dicCode": "023",
+        "dicName": "涉恐涉暴",
+        "keyGroup": "labelType",
+        "parentId": "02",
+        "val2": ""
+      },
+      {
+        "dicCode": "022",
+        "dicName": "公共管理",
+        "keyGroup": "labelType",
+        "parentId": "02",
+        "val2": ""
+      },
+      {
+        "dicCode": "021",
+        "dicName": "基本属性",
+        "keyGroup": "labelType",
+        "parentId": "02",
+        "val2": ""
+      }],
+    "nodePro": [{
+      "indexLabel": "isn",
+      "indexName": "手机卡号",
+      "name": "手机卡号(IMSI)",
+      "label": "vs",
+      "dyFlag": false
+    },
+      {
+        "indexLabel": "icn",
+        "indexName": "证件号码",
+        "edgeList": [{
+          "dyFlag": false,
+          "label": "emo",
+          "name": "机主关系",
+          "sortable": false
+        },
+          {
+            "dyFlag": false,
+            "label": "eco",
+            "name": "人车关系",
+            "sortable": false
+          }],
+        "name": "身份证",
+        "proList": [{
+          "adr": "地址"
+        },
+          {
+            "nm": "名称"
+          },
+          {
+            "tp": "类型"
+          }],
+        "label": "vic",
+        "regular": "/(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)/",
+        "dyFlag": false
+      },
+      {
+        "indexLabel": "mn",
+        "indexName": "手机号码",
+        "edgeList": [{
+          "dyFlag": false,
+          "label": "emo",
+          "name": "机主关系",
+          "sortable": false
+        },
+          {
+            "dyFlag": true,
+            "label": "ee",
+            "name": "寄递关系",
+            "sortable": false
+          },
+          {
+            "dyFlag": true,
+            "label": "comm",
+            "name": "通联关系",
+            "sortable": false
+          }],
+        "name": "手机号码",
+        "proList": [{
+          "cod": "通联出度"
+        },
+          {
+            "cid": "通联入度"
+          }],
+        "label": "user",
+        "regular": "/^(\\d{7,13}\\s*){1}(\\n(\\d{7,13}\\s*))*$/",
+        "dyFlag": true
+      },
+      {
+        "indexLabel": "ien",
+        "indexName": "机身号码",
+        "name": "手机机身码(IMEI)",
+        "label": "ve",
+        "dyFlag": false
+      },
+      {
+        "indexLabel": "cn",
+        "indexName": "车牌号码",
+        "edgeList": [{
+          "dyFlag": false,
+          "label": "eco",
+          "name": "人车关系",
+          "sortable": false
+        }],
+        "name": "车牌号",
+        "proList": [{
+          "tp": "类型"
+        },
+          {
+            "gn": "发动机编号"
+          }],
+        "label": "vc",
+        "dyFlag": false
+      }],
+    "propertyMap": {
+      "targetName": {
+        "propertyLabel": "targetName",
+        "dataType": "String",
+        "name": "对方姓名",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00001"
+      },
+      "receiveTimes": {
+        "propertyLabel": "receiveTimes",
+        "dataType": "Integer",
+        "name": "收件次数",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "targetOrigin": {
+        "propertyLabel": "targetOrigin",
+        "dataType": "String",
+        "name": "对方来源地",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00006"
+      },
+      "isn": {
+        "propertyLabel": "isn",
+        "dataType": "String",
+        "name": "手机卡号",
+        "value": 0
+      },
+      "source": {
+        "propertyLabel": "source",
+        "dataType": "String",
+        "name": "服务号码",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00001"
+      },
+      "extotalTimes": {
+        "propertyLabel": "extotalTimes",
+        "dataType": "Integer",
+        "name": "寄递总次数",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "bn": {
+        "propertyLabel": "bn",
+        "dataType": "String",
+        "name": "运单号",
+        "value": 0
+      },
+      "callTimes": {
+        "propertyLabel": "callTimes",
+        "dataType": "Integer",
+        "name": "主叫次数",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "sourceOrigin": {
+        "propertyLabel": "sourceOrigin",
+        "dataType": "String",
+        "name": "服务方来源地",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00006"
+      },
+      "duration": {
+        "propertyLabel": "duration",
+        "dataType": "Integer",
+        "name": "通联时长(s)",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "ien": {
+        "propertyLabel": "ien",
+        "dataType": "String",
+        "name": "机身号码",
+        "value": 0
+      },
+      "icn": {
+        "propertyLabel": "icn",
+        "dataType": "String",
+        "name": "证件号码",
+        "value": 0
+      },
+      "relationTimes": {
+        "propertyLabel": "relationTimes",
+        "dataType": "Integer",
+        "name": "通联总次数(次)",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "mn": {
+        "propertyLabel": "mn",
+        "dataType": "Long",
+        "name": "手机号码",
+        "value": 0
+      },
+      "st": {
+        "propertyLabel": "st",
+        "dataType": "String",
+        "name": "状态",
+        "value": 0
+      },
+      "fts": {
+        "propertyLabel": "fts",
+        "dataType": "Long",
+        "name": "首次通联时间",
+        "value": 0
+      },
+      "calledTimes": {
+        "propertyLabel": "calledTimes",
+        "dataType": "Integer",
+        "name": "被叫次数",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "gn": {
+        "propertyLabel": "gn",
+        "dataType": "String",
+        "name": "发动机编号",
+        "value": 0
+      },
+      "tnc": {
+        "propertyLabel": "tnc",
+        "dataType": "Integer",
+        "name": "总通联次数",
+        "value": 0
+      },
+      "sendTimes": {
+        "propertyLabel": "sendTimes",
+        "dataType": "Integer",
+        "name": "寄件次数",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "lts": {
+        "propertyLabel": "lts",
+        "dataType": "Long",
+        "name": "最后一次通联时间",
+        "value": 0
+      },
+      "cn": {
+        "propertyLabel": "cn",
+        "dataType": "String",
+        "name": "车牌号码",
+        "value": 0
+      },
+      "co": {
+        "propertyLabel": "co",
+        "dataType": "String",
+        "name": "公司",
+        "value": 0
+      },
+      "adr": {
+        "propertyLabel": "adr",
+        "dataType": "String",
+        "name": "地址",
+        "value": 0
+      },
+      "relationMins": {
+        "propertyLabel": "relationMins",
+        "dataType": "Integer",
+        "name": "通联总时长(s)",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": ""
+      },
+      "target": {
+        "propertyLabel": "target",
+        "dataType": "String",
+        "name": "对方号码",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00001"
+      },
+      "tdc": {
+        "propertyLabel": "tdc",
+        "dataType": "Integer",
+        "name": "总通联时长",
+        "value": 0
+      },
+      "cod": {
+        "propertyLabel": "cod",
+        "dataType": "Integer",
+        "name": "通联出度",
+        "value": 0
+      },
+      "timeSet": {
+        "propertyLabel": "timeSet",
+        "dataType": "String",
+        "name": "历次通话时间及时长",
+        "value": 0
+      },
+      "sourceName": {
+        "propertyLabel": "sourceName",
+        "dataType": "String",
+        "name": "服务方姓名",
+        "sortable": false,
+        "dyFlag": false,
+        "labelCode": "00001"
+      },
+      "tp": {
+        "propertyLabel": "tp",
+        "dataType": "String",
+        "name": "类型",
+        "value": 0
+      },
+      "cid": {
+        "propertyLabel": "cid",
+        "dataType": "Integer",
+        "name": "通联入度",
+        "value": 0
+      },
+      "csn": {
+        "propertyLabel": "csn",
+        "dataType": "String",
+        "name": "案件号码",
+        "value": 0
+      },
+      "nm": {
+        "propertyLabel": "nm",
+        "dataType": "String",
+        "name": "名称",
+        "value": 0
+      },
+      "ts": {
+        "propertyLabel": "ts",
+        "dataType": "Long",
+        "name": "时间",
+        "value": 0
+      }
+    },
+    "manyPro": [{
+      "dicCode": "204",
+      "dicName": "社团扩展",
+      "keyGroup": "manyPro",
+      "parentId": "052",
+      "val1": "1000",
+      "val2": ""
+    },
+      {
+        "dicCode": "202",
+        "dicName": "群组分析",
+        "keyGroup": "manyPro",
+        "parentId": "052",
+        "val1": "1000",
+        "val2": ""
+      },
+      {
+        "dicCode": "203",
+        "dicName": "关联发现",
+        "keyGroup": "manyPro",
+        "parentId": "052",
+        "val1": "2",
+        "val2": ""
+      },
+      {
+        "dicCode": "205",
+        "dicName": "关系呈现",
+        "keyGroup": "manyPro",
+        "parentId": "052",
+        "val1": "500",
+        "val2": ""
+      }],
+    "freeLabel": [{
+      "dicCode": "00035",
+      "dicName": "当前用户",
+      "keyGroup": "freeLabel",
+      "parentId": "024",
+      "val1": "2",
+      "val2": ""
+    },
+      {
+        "dicCode": "00037",
+        "dicName": "所有用户",
+        "keyGroup": "freeLabel",
+        "parentId": "024",
+        "val1": "2",
+        "val2": ""
+      }],
+    "singlePro": [{
+      "dicCode": "201",
+      "dicName": "单人分析",
+      "keyGroup": "singlePro",
+      "parentId": "051",
+      "val1": "1",
+      "val2": ""
+    }]
+  },
+  "msg": "success"
+}

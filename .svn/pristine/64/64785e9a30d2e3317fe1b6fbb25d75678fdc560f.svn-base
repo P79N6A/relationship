@@ -1,0 +1,67 @@
+{
+  "_from": "cytoscape-navigator",
+  "_id": "cytoscape-navigator@1.3.3",
+  "_inBundle": false,
+  "_integrity": "sha512-OngSzPm/3p/8toTaVS8FROp51ymVB/IAfnEMaXX0escKlRK+h7XWrHhdDVI6rvSAKdVjYIa4LZ7vNi3kDRhT4w==",
+  "_location": "/cytoscape-navigator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cytoscape-navigator",
+    "name": "cytoscape-navigator",
+    "escapedName": "cytoscape-navigator",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://192.168.1.99:4873/cytoscape-navigator/-/cytoscape-navigator-1.3.3.tgz",
+  "_shasum": "94109951f87f0a0c131693ea91b3da66c9e80686",
+  "_spec": "cytoscape-navigator",
+  "_where": "D:\\my_project\\rfs-ui",
+  "bugs": {
+    "url": "https://github.com/cytoscape/cytoscape.js-navigator/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "jquery": "^2.0.0 || ^1.4.0"
+  },
+  "deprecated": false,
+  "description": "Bird&#39;s eye view pan and zoom control for Cytoscape.js",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.5",
+    "gulp-prompt": "^0.1.1",
+    "gulp-replace": "^0.4.0",
+    "gulp-shell": "^0.2.9",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.0.0"
+  },
+  "homepage": "https://github.com/cytoscape/cytoscape.js-navigator",
+  "keywords": [
+    "cytoscape",
+    "cyext"
+  ],
+  "license": "MIT",
+  "main": "cytoscape-navigator.js",
+  "name": "cytoscape-navigator",
+  "peerDependencies": {
+    "cytoscape": "^2.6.0 || ^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cytoscape/cytoscape.js-navigator.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "spm": {
+    "main": "cytoscape-navigator.js"
+  },
+  "style": "cytoscape.js-navigator.css",
+  "version": "1.3.3"
+}

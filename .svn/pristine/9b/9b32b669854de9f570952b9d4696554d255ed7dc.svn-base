@@ -1,0 +1,64 @@
+{
+  "_from": "cytoscape-clipboard",
+  "_id": "cytoscape-clipboard@2.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-hA5bovEj1xyf4QRAFYRwCb0m83uiDSDunvWP1DN62t+47EBy26AFBifCosW6VMrqc+FrvIPnzkoiVNN4wC5zJw==",
+  "_location": "/cytoscape-clipboard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cytoscape-clipboard",
+    "name": "cytoscape-clipboard",
+    "escapedName": "cytoscape-clipboard",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://192.168.1.99:4873/cytoscape-clipboard/-/cytoscape-clipboard-2.2.0.tgz",
+  "_shasum": "74d744d34a684024aae93bbb3962712b87371f82",
+  "_spec": "cytoscape-clipboard",
+  "_where": "D:\\rfs",
+  "bugs": {
+    "url": "https://github.com/iVis-at-Bilkent/clipboard/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Adds copy-paste utilities to cytoscape.",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.5",
+    "gulp-prompt": "^0.1.1",
+    "gulp-replace": "^0.4.0",
+    "gulp-shell": "^0.2.9",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.0.0"
+  },
+  "homepage": "https://github.com/iVis-at-Bilkent/clipboard",
+  "keywords": [
+    "cytoscape",
+    "cyext"
+  ],
+  "license": "MIT",
+  "main": "cytoscape-clipboard.js",
+  "name": "cytoscape-clipboard",
+  "peerDependencies": {
+    "cytoscape": "^2.6.12 || ^3.0.0",
+    "jquery": "^1.3.2 || ^2.0.0 || ^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iVis-at-Bilkent/clipboard.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "spm": {
+    "main": "cytoscape-clipboard.js"
+  },
+  "version": "2.2.0"
+}

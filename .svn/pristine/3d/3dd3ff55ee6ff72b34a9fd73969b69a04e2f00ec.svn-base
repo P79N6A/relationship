@@ -1,0 +1,54 @@
+{
+  "_from": "echarts-liquidfill@^2.0.3",
+  "_id": "echarts-liquidfill@2.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-zwTdI/N99MdLE4Bw/VPBM91rVYZ7F1VaGmi6DSBYLHFG5dZ01QE6Jzkuat7jRb15eEgHGuwhqMossbXkZJ0Wbg==",
+  "_location": "/echarts-liquidfill",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "echarts-liquidfill@^2.0.3",
+    "name": "echarts-liquidfill",
+    "escapedName": "echarts-liquidfill",
+    "rawSpec": "^2.0.3",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.3"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://192.168.1.99:4873/echarts-liquidfill/-/echarts-liquidfill-2.0.4.tgz",
+  "_shasum": "6cf9eb57017070da0641494f22b8f446e421ac31",
+  "_spec": "echarts-liquidfill@^2.0.3",
+  "_where": "D:\\workSpace\\rfs-all\\rfs-ui",
+  "author": {
+    "name": "Ovilia",
+    "email": "me@zhangwenli.com",
+    "url": "http://zhangwenli.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ecomfe/echarts-liquidfill/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "ECharts liquid fill extension",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-link": "^0.2.0"
+  },
+  "homepage": "https://github.com/ecomfe/echarts-liquidfill#readme",
+  "license": "BSD",
+  "main": "index.js",
+  "name": "echarts-liquidfill",
+  "peerDependencies": {
+    "echarts": "^4.1.0",
+    "zrender": "^4.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecomfe/echarts-liquidfill.git"
+  },
+  "version": "2.0.4"
+}

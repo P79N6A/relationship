@@ -1,0 +1,123 @@
+{
+  "code":200,
+  "data":[
+    {
+      "title":"全部",
+      "expand":true,
+      "showButton":"5",
+      "parentId":"",
+      "moduleId": "1",
+      "count":"111",
+      "children":[
+        {
+          "showButton":"4",
+          "title":"一大队",
+          "moduleId": "101",
+          "expand": true,
+          "parentId":"1",
+          "count":"103",
+          "children":[
+            {
+              "title":"经济犯罪",
+              "showButton":"1",
+              "moduleId": "1001",
+              "parentId":"101",
+              "count":"0",
+              "expand":true,
+              "children":[
+                {
+                  "title":"任务1",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1001",
+                  "expand":true
+                },
+                {
+                  "title":"任务2",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1001",
+                  "expand":true
+                },
+                {
+                  "title":"任务3",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1001",
+                  "expand":true
+                }
+              ]
+            }
+          ]
+        },
+        { "showButton":"4",
+          "title":"二大队",
+          "moduleId": "102",
+          "expand": false,
+          "parentId":"1",
+          "count":"103",
+          "children":[
+            {
+              "title":"商业犯罪",
+              "showButton":"1",
+              "moduleId": "1002",
+              "parentId":"102",
+              "count":"0",
+              "expand":true,
+              "children":[
+                {
+                  "title":"商户漏税",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1002",
+                  "expand":true
+                },
+                {
+                  "title":"个体维权",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1002",
+                  "expand":true
+                },
+                {
+                  "title":"个人责罚",
+                  "showButton":"2",
+                  "count":"230",
+                  "moduleId": "1002",
+                  "parentId":"1002",
+                  "expand":true
+                }
+              ]
+            }
+          ]
+        },
+        { "showButton":"4",
+          "title":"三大队",
+          "moduleId": "103",
+          "expand": false,
+          "parentId":"1",
+          "count":"103",
+          "children":[
+            {
+              "title":"暴力犯罪",
+              "showButton":"1",
+              "moduleId": "1003",
+              "parentId":"103",
+              "count":"0",
+              "expand":true,
+              "children":[
+              ]
+            }
+          ]
+        }
+
+      ]
+    }
+
+  ]
+}
